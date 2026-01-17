@@ -75,7 +75,26 @@ Compare NumPy's speed against raw Python loops.
 ---
 
 ## 📊 Visualizing Results
+
 After running the `performance_visualizer.py`, you will find a `performance_comparison.png` image in the root directory. This provides a logarithmic scale comparison showing how each method scales as the matrix size increases.
+
+![Matrix Performance Comparison](performance_comparison.png)
+
+## 📊 Benchmark Results (MacBook M3)
+
+Typical results for a **1000 x 1000** matrix on a MacBook M3:
+
+| Operation          | C++ Parallel (s) | C++ Serial (s) | Python NumPy (s) |
+|--------------------|------------------|----------------|------------------|
+| Matrix Addition    | 0.0029s          | 0.0064s        | 0.0013s          |
+| Matrix Product     | 0.8386s          | 3.7754s        | 0.0079s          |
+| LU Factorization   | 0.4228s          | 1.2225s        | 0.0207s          |
+| Sum of Elements    | 0.0009s          | 0.0033s        | 0.0004s          |
+
+### Key Takeaways:
+- **C++ Parallel** provides a **~4.5x speedup** over Serial for Matrix Multiplication.
+- **NumPy** is significantly faster (~100x) for Multiplication as it utilizes highly optimized BLAS libraries and hardware-level SIMD instructions that aren't available in standard C++ loops.
+- Python logic without NumPy is skipped in large tests due to extreme slowness.
 
 ## 📝 Notes on MacBook M3
 - The C++ code is configured to use **8 threads** by default to match the M3's performance cores.
