@@ -18,8 +18,6 @@ __pycache__/
 *$py.class
 .pytest_cache/
 
-# Project Specific Artifacts
-performance_comparison.png
 
 # macOS System Files
 .DS_Store
