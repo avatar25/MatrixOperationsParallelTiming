@@ -1,2 +1,31 @@
-# Project exclude paths
-/cmake-build-debug/
+# C++ Build Artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.a
+*.so
+*.dylib
+MatrixOperationsParallel
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Project Specific Artifacts
+performance_comparison.png
+
+# macOS System Files
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+cmake-build-debug/
+cmake-build-release/
